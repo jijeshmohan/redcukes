@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Redcukes::VERSION
   s.authors     = ["Jijesh Mohan"]
   s.email       = ["jijeshmohan@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/jijeshmohan/redcukes"
   s.summary     = %q{Redmine-cucumber integration gem}
   s.description = %q{To run redmine issues using cucumber and update the execution status back in redmine}
 
