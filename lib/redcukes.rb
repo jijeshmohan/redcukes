@@ -1,8 +1,4 @@
-require "redcukes/version"
-require "redcukes/redmine"
-require "redcukes/issue"
-require "redcukes/feature_report"
-
+require 'support.rb'
 class Cucumber::Runtime
   alias cucumber_features features
 
