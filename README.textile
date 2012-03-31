@@ -8,9 +8,7 @@ Steps:
 
 all following configuration in your cucumber project's env.rb file.
 
-bc..
-require 'redcukes'
-
+bc.. require 'redcukes'
 Redcukes::Redmine.configure do |config|
  config.site = redmine url
  config.user = redmine username
