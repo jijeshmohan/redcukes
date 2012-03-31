@@ -6,7 +6,7 @@ Redcukes for integrating redmine with cucumber and we can run cucumber against t
 Steps:
 @gem install redcukes@
 
-all following configuration in your cucumber project's env.rb file.
+add the following configuration in your cucumber project's env.rb file.
 
 bc.. require 'redcukes'
 Redcukes::Redmine.configure do |config|
