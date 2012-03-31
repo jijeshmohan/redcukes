@@ -1,4 +1,19 @@
 h1. Redcukes
-
 !https://secure.travis-ci.org/jijeshmohan/redcukes.png?branch=master!
+
+Redcukes for integrating redmine with cucumber and we can run cucumber against the user stories stored in redmine and update execution status back to redmine
+
+Steps:
+@gem install redcukes@
+
+all following configuration in your cucumber project's env.rb file.
+
+bc..
+require 'redcukes'
+
+Redcukes::Redmine.configure do |config|
+ config.site = redmine url
+ config.user = redmine username
+ config.password = redmine password
+end
 
