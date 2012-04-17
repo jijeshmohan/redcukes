@@ -39,5 +39,6 @@ module Redcukes
             block.call(self)
         end
     end
-
+    
+  end
 end
