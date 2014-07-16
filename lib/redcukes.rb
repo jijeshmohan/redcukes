@@ -15,7 +15,7 @@ class Cucumber::Runtime
   end
 end
 
-
-AfterConfiguration do |config|
-  config.formats << ['Redcukes::FeatureReport', config.out_stream]
-end
+# this is deprecated
+# AfterConfiguration do |config|
+#  config.formats << ['Redcukes::FeatureReport', config.out_stream]
+# end
