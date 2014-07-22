@@ -8,7 +8,9 @@ class Cucumber::Runtime
     issues = Redcukes::Issue.cucumber_features
     issues.each do |s|
       uri = "#{s.id}.feature"
-      source = "Feature: #{s.subject}\n #{s.description}\n"
+      # clean up redmine text formatting
+      description = s.description.gsub(/<\/?code[^>]*>/ui,'').gsub(/<\/?pre[^>]*>/ui,'"""')
+      source = "Feature: #{s.subject}\n #{description}\n"
       feature_file = Cucumber::FeatureFile.new(uri, source)
       write_to_local uri, source
       feature = feature_file.parse(filters, {}) rescue nil
