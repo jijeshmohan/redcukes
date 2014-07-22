@@ -10,7 +10,8 @@ class Cucumber::Runtime
       uri = "#{s.id}.feature"
       # clean up redmine text formatting
       description = s.description.gsub(/<\/?code[^>]*>/ui,'').gsub(/<\/?pre[^>]*>/ui,'"""')
-      source = "Feature: #{s.subject}\n #{description}\n"
+      subject = s.subject.gsub(/(@[\w]+)?(.*)/,"\\2\n\\1")
+      source = "Feature: #{subject}\n #{description}\n"
       feature_file = Cucumber::FeatureFile.new(uri, source)
       write_to_local uri, source
       feature = feature_file.parse(filters, {}) rescue nil
