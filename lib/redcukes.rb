@@ -15,7 +15,7 @@ class Cucumber::Cli::Configuration
   end
 
   # builds the path and filename to the feature
-  # for now, just javascript tagged features go into a separate dir
+  # for now, just cucumberjs tagged features go into a separate dir
   def build_feature_filename(feature)
     features_subdir = "#{Rails.root}/features/#{get_tag_dir}"
     Dir.mkdir features_subdir unless Dir.exists?(features_subdir)
@@ -23,7 +23,7 @@ class Cucumber::Cli::Configuration
   end
 
   def get_tag_dir
-    has_tag('javascript') ? 'javascript/' : ''
+    has_tag('cucumberjs') ? 'cucumberjs/' : 'cucumber/'
   end
 
   # checks if a given tag is in the feature
