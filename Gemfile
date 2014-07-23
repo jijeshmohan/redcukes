@@ -1,8 +1,8 @@
-source "http://rubygems.org"
+source 'https://rubygems.org'
 
 # Specify your gem's dependencies in redcukes.gemspec
 gemspec
 
 group do
-    gem 'rake' 
+  gem 'rake'
 end
