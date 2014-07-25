@@ -8,10 +8,16 @@ class Cucumber::Cli::Configuration
     features = Redcukes::Issue.cucumber_features
     features.each do |feature|
       @tags = get_tags feature
-      write_feature_file build_feature_filename(feature), build_source(feature)
+      write_feature_file(build_feature_filename(feature), build_source(feature)) if is_valid?(feature)
     end
     # proceed as usual
     original_feature_files
+  end
+
+  # Check if the feature is valid
+  # It must have at least a description
+  def is_valid?(feature)
+    !feature.description.blank?
   end
 
   # builds the path and filename to the feature
