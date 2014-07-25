@@ -34,7 +34,7 @@ class Cucumber::Cli::Configuration
   # creates the feature file
   def build_source(feature)
     # clean up redmine text formatting
-    description = feature.description.gsub(/<\/?code[^>]*>/ui,'').gsub(/<\/?pre[^>]*>/ui,'"""').gsub(/^$\n/, '')
+    description = feature.description.gsub(/<\/?code[^>]*>/ui,'').gsub(/<\/?pre[^>]*>/ui,'"""').gsub(/^\s+/, '')
     subject = "Feature: #{feature.subject}\n"
     "#{@tags.join(' ') + "\n" if @tags}#{subject}\n #{description}\n"
   end
