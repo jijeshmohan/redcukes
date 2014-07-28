@@ -8,7 +8,7 @@ module Redcukes
       @status[:errors] = @status[:undefined] = @status[:failed] = @status[:passed]= 0
     end
 
-    def after_step_result(keyword, step_match, multiline_arg, status, exception, source_indent, background)
+    def after_step_result(keyword, step_match, multiline_arg, status, exception, source_indent, background, file_colon_line)
       @status[status] += 1 if @status.has_key? status
     end
 

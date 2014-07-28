@@ -6,7 +6,7 @@ module Redcukes
     class << self
       # Get all redmine issues with a specified search criteria
       def cucumber_features
-        filter = @default_filter.merge(self.search_filter)
+        filter = @@default_filter.merge(self.search_filter)
         find(:all, :params => filter)
       end
 

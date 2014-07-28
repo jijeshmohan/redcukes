@@ -26,12 +26,12 @@ module Redcukes
       #
       # :project_id, :tracker_id, :status_id
       def search_filter=(value)
-        @search_content = value
+        @@search_content = value
       end
 
-      # To get the issue search filter for fetcting issues from redmine.
+      # To get the issue search filter for fetching issues from redmine.
       def search_filter
-        @search_content || {}
+        @@search_content || {}
       end
 
       # To configure redmine settings via cucumber env file
@@ -39,6 +39,5 @@ module Redcukes
         block.call(self)
       end
     end
-
   end
 end
